@@ -1,0 +1,12 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: Install apache2 on ubuntu
+      apt:
+        name: apache2
+        state: present
+    - name: uninstall apache2 on ubuntu
+      apt:
+        name: apache2
+        state: absent
