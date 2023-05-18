@@ -1,5 +1,7 @@
-[ubuntuserver]
+[webserver]
 172.31.46.11
-
-[amazonRedHat]
 172.31.26.180
+
+[webserver:vars]
+webpackageubuntu= apache2
+webpackageredhat= httpd
