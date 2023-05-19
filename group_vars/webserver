@@ -2,3 +2,5 @@
 
 webpackageubuntu: apache2
 webpackageredhat: httpd
+javaonubuntu: openjdk-8-jdk
+javaonamazonlinux: java-1.8.0-amazon-corretto-devel
