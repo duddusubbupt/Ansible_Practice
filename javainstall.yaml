@@ -10,7 +10,7 @@
     when: ansible_os_family == "Debian"
   
   - name: Install Java on Amazon linux
-    apt:
+    yum:
       name: "{{javaonamazonlinux}}"
       state: present
     when: ansible_os_family == "RedHat"
