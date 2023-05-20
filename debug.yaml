@@ -1,0 +1,11 @@
+---
+- hosts: 172.31.46.11
+  become: yes
+
+  tasks:
+  - name: Get the host name
+    command: hostname -f
+    register: hostdetails
+
+  -name: print the details
+  debug: "{{hostdetails}}"
