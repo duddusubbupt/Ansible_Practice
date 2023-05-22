@@ -21,4 +21,4 @@
     apt:
       name: tree
       state: present
-      when: hostdetails.stderr !=""
+    when: hostdetails.stderr !=""
