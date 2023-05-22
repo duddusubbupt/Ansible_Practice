@@ -10,3 +10,15 @@
   - name: print the details
     debug:
       msg: "{{hostdetails}}"
+
+  - name: Install git
+    apt:
+      name: git
+      state: present
+    when: hostdetails.stderr ==""
+  
+  - name: Install tree
+    apt:
+      name: wget
+      state: present
+      when: hostdetails.stderr !=""
