@@ -1,0 +1,11 @@
+---
+- hosts: 172.31.46.11
+  become: yes
+  tasks:
+  
+  - include: myfile.yaml
+  
+  - name: Install webserver
+    apt:
+      name: apache2
+      state: present
