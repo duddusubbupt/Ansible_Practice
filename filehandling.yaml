@@ -22,7 +22,7 @@
     notify: restart webserver
   
   - name: download internet files
-    geturl:
+    get_url:
       url: https://get.jenkins.io/windows-stable/2.387.3/jenkins.msi
       dest: /home/ubuntu/jenkins.msi
       force_basic_auth: yes
