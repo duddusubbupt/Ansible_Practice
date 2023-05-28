@@ -13,7 +13,17 @@
     copy:
       src: indexpage
       dest: /var/www/html/index.html
+    notify: restart webserver
+  
   - name: copy dynamic file into nodes
     template:
       src: dynamicfindex.j2
       dest: /var/www/html/index.html
+    notify: restart webserver
+  
+  ########### Usage of Handlers ###################
+  handlers:
+  - name: restart webserver
+    service:
+      name: apache2
+      state: restarted
