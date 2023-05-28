@@ -21,6 +21,13 @@
       dest: /var/www/html/index.html
     notify: restart webserver
   
+  - name: download internet files
+    geturl:
+      url: https://get.jenkins.io/windows-stable/2.387.3/jenkins.msi
+      dest: /home/ubuntu/jenkins.msi
+      force_basic_auth: yes
+
+  
   ########### Usage of Handlers ###################
   handlers:
   - name: restart webserver
