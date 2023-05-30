@@ -1,0 +1,17 @@
+---
+- hosts: localhost
+  become: yes
+  tasks:
+  - name: Create an ansible node
+- amazon.aws.ec2:
+    key_name: mylaptopkey.pem
+    instance_type: t2.micro
+    image: ami-0e93090dd4ac0433b
+    wait: yes
+    region: us-east-2
+    group: sg-0ff05849e5efa234c
+    count: 2
+    vpc_subnet_id: subnet-0efb759e6f1694eef
+    assign_public_ip: yes
+    instance_tags:
+      Name: AnsibleNode
